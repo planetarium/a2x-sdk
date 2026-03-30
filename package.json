@@ -1,0 +1,53 @@
+{
+  "name": "@a2x/sdk",
+  "version": "0.1.0",
+  "description": "Build A2A + X402 agents with minimal boilerplate",
+  "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./nextjs": {
+      "types": "./dist/adapters/nextjs.d.ts",
+      "import": "./dist/adapters/nextjs.js",
+      "require": "./dist/adapters/nextjs.cjs"
+    },
+    "./express": {
+      "types": "./dist/adapters/express.d.ts",
+      "import": "./dist/adapters/express.js",
+      "require": "./dist/adapters/express.cjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "peerDependencies": {
+    "@a2a-js/sdk": "^0.3.13",
+    "x402": "^1.1.0"
+  },
+  "peerDependenciesMeta": {
+    "x402": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@a2a-js/sdk": "^0.3.13",
+    "tsup": "^8.5.0",
+    "typescript": "^5.9.0",
+    "vitest": "^3.2.0",
+    "x402": "^1.1.0"
+  },
+  "license": "MIT"
+}
